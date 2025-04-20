@@ -36,3 +36,24 @@
 //    console.log(data);
 // };
 // loadPeople();
+// axios
+//    .get('https://swapi.dev/api/people/id')
+//    .then((res) => {
+//       console.log(res.data);
+//    })
+//    .catch((err) => {
+//       console.log(err);
+//       alert(err.massage);
+//    })
+
+const getPeople = async (id) => {
+   try {
+      const res = await axios.get(`https://swapi.dev/api/people/${id}`);
+      console(res.data);
+   } catch (error) {
+      console.log(error);
+      console.log(error.message);
+      console.log(error.response.status);
+      console.log(error.response.data);
+   }
+};
